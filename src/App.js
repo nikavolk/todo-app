@@ -1,15 +1,12 @@
 import Header from "./Components/Header";
-import ToDoInput from "./Components/ToDoInput";
-import ToDoList from "./Components/ToDoList";
+import Input from "./Components/Input";
+import TodoList from "./Components/TodoList";
+import Filter from "./Components/Filter";
 import { useState } from "react";
 
 function App() {
-  const [toDoItems, setToDoItems] = useState([
-    { id: 0, text: "ActiveTsfdsfdsf", state: "active" },
-    { id: 1, text: "completedadfdaf", state: "completed" },
-    { id: 2, text: "completedTsfbbddbdfdsfdsf", state: "completed" },
-    { id: 3, text: "ActiveTsfds4234324fdsf", state: "active" },
-  ]);
+  const [inputText, setInputText] = useState("Add input");
+  const [todoList, setTodoList] = useState([]);
 
   return (
     <div>
@@ -17,10 +14,18 @@ function App() {
         <Header />
       </div>
       <div>
-        <ToDoInput setToDoItems={setToDoItems} />
+        <Input
+          inputText={inputText}
+          setInputText={setInputText}
+          todoList={todoList}
+          setTodoList={setTodoList}
+        />
       </div>
       <div>
-        <ToDoList toDoItems={toDoItems} setToDoItems={setToDoItems} />
+        <TodoList todoList={todoList} />
+      </div>
+      <div>
+        <Filter />
       </div>
     </div>
   );
