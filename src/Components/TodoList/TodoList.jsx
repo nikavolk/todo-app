@@ -11,8 +11,6 @@ const TodoList = ({
 }) => {
   return (
     <div className="list-wrapper">
-      {/* {filteredTodoList ? console.log("hi") : console.log("bye")} */}
-
       {filteredTodoList.map((item) => (
         <TodoItem
           key={item.id}
@@ -22,13 +20,15 @@ const TodoList = ({
         />
       ))}
 
-      <Filter
-        setStatus={setStatus}
-        filteredTodoList={filteredTodoList}
-        setFilteredTodoList={setFilteredTodoList}
-        todoList={todoList}
-        setTodoList={setTodoList}
-      />
+      {filteredTodoList.length > 0 && (
+        <Filter
+          setStatus={setStatus}
+          filteredTodoList={filteredTodoList}
+          setFilteredTodoList={setFilteredTodoList}
+          todoList={todoList}
+          setTodoList={setTodoList}
+        />
+      )}
     </div>
   );
 };

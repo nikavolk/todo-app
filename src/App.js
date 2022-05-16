@@ -1,7 +1,6 @@
 import Header from "./Components/Header/Header";
 import Input from "./Components/Input/Input";
 import TodoList from "./Components/TodoList/TodoList";
-import Filter from "./Components/Filter/Filter";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -40,15 +39,15 @@ function App() {
           todoList={todoList}
           setTodoList={setTodoList}
         />
-        <div>
-          <TodoList
-            filteredTodoList={filteredTodoList}
-            todoList={todoList}
-            setTodoList={setTodoList}
-            setStatus={setStatus}
-          />
-        </div>
-        <div className="footer-text">Drag and drop to reorder list</div>
+        <TodoList
+          filteredTodoList={filteredTodoList}
+          todoList={todoList}
+          setTodoList={setTodoList}
+          setStatus={setStatus}
+        />
+        {filteredTodoList.length > 0 && (
+          <div className="footer-text">Drag and drop to reorder list</div>
+        )}
       </div>
     </div>
   );
