@@ -1,0 +1,18 @@
+@use "../../Assets/Styles/variables" as *;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0;
+
+  .logo {
+    color: $l_vLightGray;
+    font-size: 2em;
+    letter-spacing: 1rem;
+    font-weight: 700;
+  }
+  .btn-theme {
+    cursor: pointer;
+  }
+}

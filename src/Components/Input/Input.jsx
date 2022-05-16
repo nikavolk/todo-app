@@ -1,4 +1,5 @@
 import { nanoid } from "nanoid";
+import "./input.component.style.scss";
 
 const Input = ({ inputText, setInputText, todoList, setTodoList }) => {
   const inputTextHandler = (e) => {
@@ -15,7 +16,8 @@ const Input = ({ inputText, setInputText, todoList, setTodoList }) => {
     setInputText("");
   };
   return (
-    <div>
+    <div className="input-wrapper">
+      <div className="input-circle" />
       <form>
         <input
           value={inputText}
@@ -24,7 +26,9 @@ const Input = ({ inputText, setInputText, todoList, setTodoList }) => {
             inputTextHandler(e);
           }}
         ></input>
-        <button onClick={submitTodoHandler}>Submit</button>
+        <button className="btn" onClick={submitTodoHandler}>
+          Submit
+        </button>
       </form>
     </div>
   );

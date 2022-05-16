@@ -1,0 +1,17 @@
+@use "../../Assets/Styles/variables" as *;
+
+.item-wrapper {
+  border-bottom: 1px solid $l_vLightGrayBlue;
+
+  form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+  }
+
+  .item-text {
+    flex: 2 0 0;
+    margin: 10px 20px;
+  }
+}

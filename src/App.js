@@ -1,31 +1,53 @@
-import Header from "./Components/Header";
-import Input from "./Components/Input";
-import TodoList from "./Components/TodoList";
-import Filter from "./Components/Filter";
-import { useState } from "react";
+import Header from "./Components/Header/Header";
+import Input from "./Components/Input/Input";
+import TodoList from "./Components/TodoList/TodoList";
+import Filter from "./Components/Filter/Filter";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [inputText, setInputText] = useState("Add input");
+  const [inputText, setInputText] = useState("");
   const [todoList, setTodoList] = useState([]);
+  const [status, setStatus] = useState("all");
+  const [filteredTodoList, setFilteredTodoList] = useState([]);
+
+  // filter by selected status and set new state
+  const filterHandler = () => {
+    switch (status) {
+      case "active":
+        setFilteredTodoList(
+          todoList.filter((item) => item.completed === false)
+        );
+        break;
+      case "completed":
+        setFilteredTodoList(todoList.filter((item) => item.completed === true));
+        break;
+      default:
+        setFilteredTodoList(todoList);
+    }
+  };
+
+  useEffect(() => {
+    filterHandler();
+  }, [status, todoList]);
 
   return (
-    <div>
-      <div>
+    <div className="wrapper">
+      <div className="main-container">
         <Header />
-      </div>
-      <div>
         <Input
           inputText={inputText}
           setInputText={setInputText}
           todoList={todoList}
           setTodoList={setTodoList}
         />
-      </div>
-      <div>
-        <TodoList todoList={todoList} />
-      </div>
-      <div>
-        <Filter />
+        <div>
+          <TodoList
+            filteredTodoList={filteredTodoList}
+            todoList={todoList}
+            setTodoList={setTodoList}
+          />
+        </div>
+        <div>Drag and drop to reorder list</div>
       </div>
     </div>
   );
