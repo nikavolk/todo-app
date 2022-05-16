@@ -8,6 +8,8 @@ const TodoList = ({
   filteredTodoList,
   setStatus,
   setFilteredTodoList,
+  checked,
+  setChecked,
 }) => {
   return (
     <div className="list-wrapper">
@@ -17,6 +19,8 @@ const TodoList = ({
           todoList={todoList}
           item={item}
           setTodoList={setTodoList}
+          checked={checked}
+          setChecked={setChecked}
         />
       ))}
 

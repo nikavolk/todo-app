@@ -35,7 +35,7 @@ const Filter = ({ setStatus, todoList, setTodoList }) => {
       <div className="state-adjacent">{activeItems()}</div>
       <div className="state-btn-wrapper">
         <div>
-          <button onClick={() => filterHandler("all")}>All</button>
+          <button onClick={() => filterHandler()}>All</button>
         </div>
         <div>
           <button onClick={() => filterHandler("active")}>Active</button>

@@ -8,6 +8,8 @@ function App() {
   const [todoList, setTodoList] = useState([]);
   const [status, setStatus] = useState("all");
   const [filteredTodoList, setFilteredTodoList] = useState([]);
+  const [checked, setChecked] = useState(false);
+  const [theme, setTheme] = useState();
 
   // filter by selected status and set new state
   const filterHandler = () => {
@@ -44,6 +46,8 @@ function App() {
           todoList={todoList}
           setTodoList={setTodoList}
           setStatus={setStatus}
+          checked={checked}
+          setChecked={setChecked}
         />
         {filteredTodoList.length > 0 && (
           <div className="footer-text">Drag and drop to reorder list</div>
