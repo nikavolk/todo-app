@@ -11,6 +11,8 @@ const TodoList = ({
 }) => {
   return (
     <div className="list-wrapper">
+      {/* {filteredTodoList ? console.log("hi") : console.log("bye")} */}
+
       {filteredTodoList.map((item) => (
         <TodoItem
           key={item.id}
