@@ -20,15 +20,13 @@ const TodoList = ({
         />
       ))}
 
-      {filteredTodoList.length > 0 && (
-        <Filter
-          setStatus={setStatus}
-          filteredTodoList={filteredTodoList}
-          setFilteredTodoList={setFilteredTodoList}
-          todoList={todoList}
-          setTodoList={setTodoList}
-        />
-      )}
+      <Filter
+        setStatus={setStatus}
+        filteredTodoList={filteredTodoList}
+        setFilteredTodoList={setFilteredTodoList}
+        todoList={todoList}
+        setTodoList={setTodoList}
+      />
     </div>
   );
 };
