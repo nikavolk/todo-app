@@ -1,1 +1,9 @@
 @use "./_global";
+@use "../../Assets/Styles/variables" as *;
+
+.footer-text {
+  margin: 40px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: $l_darkGrayBlue;
+}

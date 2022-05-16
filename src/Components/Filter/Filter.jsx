@@ -23,7 +23,7 @@ const Filter = ({ setStatus, todoList, setTodoList }) => {
   const activeNumber = active.length;
   const activeItems = () => {
     if (activeNumber === 0) {
-      return <div>No items</div>;
+      return <div>No active items</div>;
     } else if (activeNumber === 1) return <div>1 item left</div>;
     else {
       return <div>{`${activeNumber} items left`}</div>;
@@ -31,18 +31,20 @@ const Filter = ({ setStatus, todoList, setTodoList }) => {
   };
 
   return (
-    <div>
-      <div>{activeItems()}</div>
-      <div>
-        <button onClick={() => filterHandler("all")}>All</button>
+    <div className="filter-wrapper">
+      <div className="state-adjacent">{activeItems()}</div>
+      <div className="state-btn-wrapper">
+        <div>
+          <button onClick={() => filterHandler("all")}>All</button>
+        </div>
+        <div>
+          <button onClick={() => filterHandler("active")}>Active</button>
+        </div>
+        <div>
+          <button onClick={() => filterHandler("completed")}>Completed</button>
+        </div>
       </div>
-      <div>
-        <button onClick={() => filterHandler("active")}>Active</button>
-      </div>
-      <div>
-        <button onClick={() => filterHandler("completed")}>Completed</button>
-      </div>
-      <div>
+      <div className="state-adjacent right">
         <button onClick={clearHandler}>Clear Completed</button>
       </div>
     </div>

@@ -17,11 +17,10 @@
   }
 
   input {
-    font-family: $font-stack;
     font-size: 18px;
     border: none;
     width: 450px;
-    padding-top: 5px;
+    margin-top: 5px;
 
     &:focus {
       outline: none;

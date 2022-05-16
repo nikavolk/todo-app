@@ -45,9 +45,10 @@ function App() {
             filteredTodoList={filteredTodoList}
             todoList={todoList}
             setTodoList={setTodoList}
+            setStatus={setStatus}
           />
         </div>
-        <div>Drag and drop to reorder list</div>
+        <div className="footer-text">Drag and drop to reorder list</div>
       </div>
     </div>
   );

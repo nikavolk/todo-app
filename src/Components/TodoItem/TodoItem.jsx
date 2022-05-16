@@ -1,4 +1,5 @@
 import "./todoitem.component.style.scss";
+import deleteIcon from "../../Assets/Images/icon-cross.svg";
 
 const TodoItem = ({ todoList, setTodoList, item }) => {
   const deleteHandler = (id) => {
@@ -21,20 +22,28 @@ const TodoItem = ({ todoList, setTodoList, item }) => {
   };
 
   return (
-    <div className="item-wrapper">
+    <div>
       <form onSubmit={submitHandler}>
-        <div>
-          <button onClick={() => checkHandler(item.id)}>O</button>
-        </div>
-        <div className="item-text">{item.text}</div>
-        <div>
-          <button
-            onClick={() => {
-              deleteHandler(item.id);
-            }}
-          >
-            X
-          </button>
+        <div className="item-wrapper">
+          <div className="item-checkbox">
+            <input
+              type="checkbox"
+              name={item.id}
+              id={item.id}
+              onClick={() => checkHandler(item.id)}
+            />
+            <label for={item.id} className="item-text">
+              {item.text}
+            </label>
+          </div>
+          <div className="btn-delete">
+            <img
+              src={deleteIcon}
+              onClick={() => {
+                deleteHandler(item.id);
+              }}
+            />
+          </div>
         </div>
       </form>
     </div>

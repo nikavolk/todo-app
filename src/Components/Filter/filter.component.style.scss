@@ -1,0 +1,44 @@
+@use "../../Assets/Styles/variables" as *;
+
+.filter-wrapper {
+  color: $l_darkGrayBlue;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.7em;
+
+  .state-btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  .state-adjacent {
+    width: 150px;
+    margin: 0 20px;
+  }
+  .right {
+    text-align: right;
+  }
+
+  .btn-clear {
+  }
+
+  button {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    font-weight: 700;
+    color: $l_darkGrayBlue;
+    padding: 0;
+
+    &:hover {
+      color: $l_vDarkGrayBlue;
+    }
+
+    &:active {
+      color: $brightBlue;
+    }
+  }
+}

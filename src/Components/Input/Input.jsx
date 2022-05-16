@@ -9,12 +9,16 @@ const Input = ({ inputText, setInputText, todoList, setTodoList }) => {
   const submitTodoHandler = (e) => {
     e.preventDefault();
     const generateId = nanoid();
-    setTodoList([
-      ...todoList,
-      { text: inputText, completed: false, id: generateId },
-    ]);
-    setInputText("");
+
+    if (inputText) {
+      setTodoList([
+        ...todoList,
+        { text: inputText, completed: false, id: generateId },
+      ]);
+      setInputText("");
+    }
   };
+
   return (
     <div className="input-wrapper">
       <div className="input-circle" />
@@ -25,6 +29,7 @@ const Input = ({ inputText, setInputText, todoList, setTodoList }) => {
           onChange={(e) => {
             inputTextHandler(e);
           }}
+          required
         ></input>
         <button className="btn" onClick={submitTodoHandler}>
           Submit
