@@ -39,19 +39,23 @@ const TodoItem = ({ todoList, setTodoList, item, theme }) => {
     <div>
       <form onSubmit={submitHandler}>
         <div
-          className="item-wrapper"
+          className={`item-wrapper ${theme === "dark" ? "dark" : ""}`}
           onMouseOver={handleMouseover}
           onMouseOut={handleMouseout}
         >
           <div className="item-checkbox">
             <input
+              className={`item-check ${theme === "dark" ? "dark" : ""}`}
               type="checkbox"
               name={item.id}
               id={item.id}
               onChange={() => checkHandler(item.id)}
               checked={item.completed ? true : false}
             />
-            <label htmlFor={item.id} className="item-text">
+            <label
+              htmlFor={item.id}
+              className={`item-text ${theme === "dark" ? "dark" : ""}`}
+            >
               {item.text}
             </label>
             {hover && (

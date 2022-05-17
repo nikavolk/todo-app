@@ -8,20 +8,33 @@
   box-shadow: 0px 0px 20px 1px $l_darkGrayBlue;
   align-self: stretch;
 
+  &.dark {
+    background-color: $d_vDarkDesatBlue;
+    box-shadow: 0px 0px 20px 1px $d_vDarkDesatBlue;
+  }
+
   .input-circle {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     border: 1px solid $l_vLightGrayBlue;
     margin: 20px;
+    &.dark {
+      border: 1px solid $d_darkGrayishBlue;
+    }
   }
 
-  input {
+  .input-field {
     font-size: 18px;
     line-height: 30px;
     border: none;
     width: 450px;
     margin-top: 5px;
+    background-color: inherit;
+
+    &.dark {
+      color: $d_lightGrayBlueH;
+    }
 
     &:focus {
       outline: none;

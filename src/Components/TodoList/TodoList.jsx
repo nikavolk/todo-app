@@ -13,7 +13,7 @@ const TodoList = ({
   theme,
 }) => {
   return (
-    <div className="list-wrapper">
+    <div className={`list-wrapper ${theme === "dark" ? "dark" : ""}`}>
       {filteredTodoList.map((item) => (
         <TodoItem
           key={item.id}

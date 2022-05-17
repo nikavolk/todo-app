@@ -24,10 +24,11 @@ const Input = ({ inputText, setInputText, todoList, setTodoList, theme }) => {
   };
 
   return (
-    <div className="input-wrapper">
-      <div className="input-circle" />
+    <div className={`input-wrapper ${theme === "dark" ? "dark" : ""}`}>
+      <div className={`input-circle ${theme === "dark" ? "dark" : ""}`} />
       <form>
         <input
+          className={`input-field ${theme === "dark" ? "dark" : ""}`}
           value={inputText}
           type="text"
           onClick={clearInputText}
@@ -37,9 +38,7 @@ const Input = ({ inputText, setInputText, todoList, setTodoList, theme }) => {
           required
           placeholder="Enter an item 😊"
         ></input>
-        <button className="btn" onClick={submitTodoHandler}>
-          Submit
-        </button>
+        <button className="btn" onClick={submitTodoHandler}></button>
       </form>
     </div>
   );

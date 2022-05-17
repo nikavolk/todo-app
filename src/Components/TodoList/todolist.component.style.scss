@@ -6,4 +6,9 @@
   background-color: white;
   margin: 20px 0;
   box-shadow: 0px 0px 20px 1px $l_darkGrayBlue;
+
+  &.dark {
+    background-color: $d_vDarkDesatBlue;
+    box-shadow: 0px 0px 20px 1px $d_vDarkDesatBlue;
+  }
 }
