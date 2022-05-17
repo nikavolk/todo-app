@@ -9,7 +9,7 @@ function App() {
   const [status, setStatus] = useState("all");
   const [filteredTodoList, setFilteredTodoList] = useState([]);
   const [checked, setChecked] = useState(false);
-  const [theme, setTheme] = useState();
+  const [theme, setTheme] = useState("light");
 
   // filter by selected status and set new state
   const filterHandler = () => {
@@ -32,14 +32,15 @@ function App() {
   }, [status, todoList]);
 
   return (
-    <div className="wrapper">
+    <div className={`wrapper ${theme === "dark" ? "dark" : ""}`}>
       <div className="main-container">
-        <Header />
+        <Header theme={theme} setTheme={setTheme} />
         <Input
           inputText={inputText}
           setInputText={setInputText}
           todoList={todoList}
           setTodoList={setTodoList}
+          theme={theme}
         />
         <TodoList
           filteredTodoList={filteredTodoList}
@@ -48,9 +49,12 @@ function App() {
           setStatus={setStatus}
           checked={checked}
           setChecked={setChecked}
+          theme={theme}
         />
         {filteredTodoList.length > 0 && (
-          <div className="footer-text">Drag and drop to reorder list</div>
+          <div className={`footer-text ${theme === "dark" ? "dark" : ""}`}>
+            Drag and drop to reorder list
+          </div>
         )}
       </div>
     </div>

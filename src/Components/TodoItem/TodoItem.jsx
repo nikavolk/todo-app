@@ -2,7 +2,7 @@ import "./todoitem.component.style.scss";
 import deleteIcon from "../../Assets/Images/icon-cross.svg";
 import { useState } from "react";
 
-const TodoItem = ({ todoList, setTodoList, item, checked, setChecked }) => {
+const TodoItem = ({ todoList, setTodoList, item, theme }) => {
   // hover state for delete button
   const [hover, setHover] = useState(false);
   const handleMouseover = () => {
@@ -48,7 +48,7 @@ const TodoItem = ({ todoList, setTodoList, item, checked, setChecked }) => {
               type="checkbox"
               name={item.id}
               id={item.id}
-              onClick={() => checkHandler(item.id)}
+              onChange={() => checkHandler(item.id)}
               checked={item.completed ? true : false}
             />
             <label htmlFor={item.id} className="item-text">

@@ -7,7 +7,6 @@ body {
   padding: 0;
   margin: 0;
   font-size: 18px;
-  background-color: $l_vLightGray;
 }
 
 input,
@@ -22,13 +21,26 @@ button {
   background-image: url("../Images/bg-desktop-light.jpg");
   background-repeat: no-repeat;
   background-size: 100% auto;
+  background-color: $l_vLightGray;
 
-  .dark {
+  &.dark {
     background-image: url("../Images/bg-desktop-dark.jpg");
+    background-color: $d_vDarkBlue;
   }
 }
 
 .main-container {
   width: 550px;
   margin: 5%;
+}
+
+.footer-text {
+  margin: 40px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: $l_darkGrayBlue;
+
+  &.dark {
+    color: $d_darkGrayBlue;
+  }
 }

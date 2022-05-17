@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./filter.component.style.scss";
 
-const Filter = ({ setStatus, todoList, setTodoList }) => {
+const Filter = ({ setStatus, todoList, setTodoList, theme }) => {
   const [active, setActive] = useState([]);
 
   // set status to filter by

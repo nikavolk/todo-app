@@ -1,18 +1,26 @@
 import "./header.component.style.scss";
-import btnTheme from "../../Assets/Images/icon-moon.svg";
+import btnMoon from "../../Assets/Images/icon-moon.svg";
+import btnSun from "../../Assets/Images/icon-sun.svg";
 
-const Header = () => {
-  const doNothing = () => {
-    console.log("nothing");
+const Header = ({ theme, setTheme }) => {
+  const themeToggle = () => {
+    theme === "light" ? setTheme("dark") : setTheme("light");
+  };
+
+  const SetButton = () => {
+    if (theme === "light") {
+      return <img src={btnMoon} onClick={themeToggle} />;
+    } else {
+      return <img src={btnSun} onClick={themeToggle} />;
+    }
   };
 
   return (
     <div className="header">
       <div className="logo">TODO</div>
       <div className="btn-theme">
-        <img src={btnTheme} onClick={doNothing} />
+        <SetButton onClick={themeToggle} />
       </div>
-      {/* <button className="btn-theme">Change Theme</button> */}
     </div>
   );
 };

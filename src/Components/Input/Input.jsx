@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid";
 import "./input.component.style.scss";
 
-const Input = ({ inputText, setInputText, todoList, setTodoList }) => {
+const Input = ({ inputText, setInputText, todoList, setTodoList, theme }) => {
   const inputTextHandler = (e) => {
     setInputText(e.target.value);
   };

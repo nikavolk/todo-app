@@ -10,6 +10,7 @@ const TodoList = ({
   setFilteredTodoList,
   checked,
   setChecked,
+  theme,
 }) => {
   return (
     <div className="list-wrapper">
@@ -21,6 +22,7 @@ const TodoList = ({
           setTodoList={setTodoList}
           checked={checked}
           setChecked={setChecked}
+          theme={theme}
         />
       ))}
 
@@ -30,6 +32,7 @@ const TodoList = ({
         setFilteredTodoList={setFilteredTodoList}
         todoList={todoList}
         setTodoList={setTodoList}
+        theme={theme}
       />
     </div>
   );
