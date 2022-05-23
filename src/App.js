@@ -51,11 +51,11 @@ function App() {
           setChecked={setChecked}
           theme={theme}
         />
-        {filteredTodoList.length > 0 && (
+        {/*{filteredTodoList.length > 0 && (
           <div className={`footer-text ${theme === "dark" ? "dark" : ""}`}>
             Drag and drop to reorder list
-          </div>
-        )}
+          </div>}
+        )*/}
       </div>
     </div>
   );

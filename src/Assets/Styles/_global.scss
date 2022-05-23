@@ -23,14 +23,23 @@ button {
   background-size: 100% auto;
   background-color: $l_vLightGray;
 
+  @media (max-width: 450px) {
+    background-image: url("../Images/bg-mobile-light.jpg");
+  }
+
   &.dark {
     background-image: url("../Images/bg-desktop-dark.jpg");
     background-color: $d_vDarkBlue;
+
+    @media (max-width: 450px) {
+      background-image: url("../Images/bg-mobile-dark.jpg");
+    }
   }
 }
 
 .main-container {
-  width: 550px;
+  width: 85%;
+  max-width: 550px;
   margin: 5%;
 }
 

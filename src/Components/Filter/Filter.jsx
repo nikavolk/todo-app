@@ -33,19 +33,32 @@ const Filter = ({ setStatus, todoList, setTodoList, theme }) => {
   return (
     <div className="filter-wrapper">
       <div className="state-adjacent">{activeItems()}</div>
-      <div className="state-btn-wrapper">
-        <div>
-          <button onClick={() => filterHandler()}>All</button>
-        </div>
-        <div>
-          <button onClick={() => filterHandler("active")}>Active</button>
-        </div>
-        <div>
-          <button onClick={() => filterHandler("completed")}>Completed</button>
+      <div className={`state-btn-wrapper ${theme === "dark" ? "dark" : ""}`}>
+        <div className="btn-filters">
+          <button className="btn-filter" onClick={() => filterHandler()}>
+            All
+          </button>
+          <button
+            className={`btn-filter ${theme === "dark" ? "dark" : ""}`}
+            onClick={() => filterHandler("active")}
+          >
+            Active
+          </button>
+          <button
+            className={`btn-filter ${theme === "dark" ? "dark" : ""}`}
+            onClick={() => filterHandler("completed")}
+          >
+            Completed
+          </button>
         </div>
       </div>
       <div className="state-adjacent right">
-        <button onClick={clearHandler}>Clear Completed</button>
+        <button
+          className={`btn-remove-completed ${theme === "dark" ? "dark" : ""}`}
+          onClick={clearHandler}
+        >
+          Clear Completed
+        </button>
       </div>
     </div>
   );
