@@ -24,20 +24,23 @@
     }
   }
 
-  .input-field {
-    font-size: 18px;
-    line-height: 30px;
-    border: none;
-    width: auto;
-    margin-top: 5px;
-    background-color: inherit;
+  .input-field-wrapper {
+    width: 85%;
+    .input-field {
+      font-size: 18px;
+      line-height: 30px;
+      border: none;
+      width: 100%;
+      margin-top: 5px;
+      background-color: inherit;
 
-    &.dark {
-      color: $d_lightGrayBlueH;
-    }
+      &.dark {
+        color: $d_lightGrayBlueH;
+      }
 
-    &:focus {
-      outline: none;
+      &:focus {
+        outline: none;
+      }
     }
   }
 

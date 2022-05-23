@@ -26,7 +26,7 @@ const Input = ({ inputText, setInputText, todoList, setTodoList, theme }) => {
   return (
     <div className={`input-wrapper ${theme === "dark" ? "dark" : ""}`}>
       <div className={`input-circle ${theme === "dark" ? "dark" : ""}`} />
-      <div className="input-field">
+      <div className="input-field-wrapper">
         <form>
           <input
             className={`input-field ${theme === "dark" ? "dark" : ""}`}
