@@ -22,6 +22,9 @@ button {
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-color: $l_vLightGray;
+  animation: fadeInAnimation ease 0.3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 
   @media (max-width: 450px) {
     background-image: url("../Images/bg-mobile-light.jpg");
