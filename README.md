@@ -1,7 +1,6 @@
 # Todo App
 
-My first somewhat more advanced React project.
-Life advice generator with a "fetch another advice" function.
+My first somewhat more advanced React project. App for tracking todo items, filtering through them, marking them as completed and removing them.
 
 Made with HTML5, SASS, ReactJS (a bunch of useStates, random ID generation with nanoid).
 
